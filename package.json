@@ -1,0 +1,23 @@
+{
+  "name": "pets-r-us",
+  "version": "1.0.0",
+  "description": "This is the repository for my pets-r-us project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zmirgopin/pets-r-us.git"
+  },
+  "author": "Zahava Gopin",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
