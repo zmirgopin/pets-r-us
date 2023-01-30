@@ -28,6 +28,19 @@ app.get('/grooming', (req, res) =>{
     })
 });
 
+app.get('/training', (req, res) =>{
+    res.render('training', {
+        title: 'pets-r-us: Training',
+        pageTitle: "Training Services"
+    })
+});
+
+app.get('/boarding', (req, res) =>{
+    res.render('boarding', {
+        title: 'pets-r-us: Boarding',
+        pageTitle: "Boarding Services"
+    })
+});
 
 app.listen(PORT, () => {
     console.log('Application started and listening on PORT' + PORT);

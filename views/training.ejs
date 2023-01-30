@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+
+    <link rel="stylesheet" href="/styles/site.css">
+ 
+    <!-- Google fonts for Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<%- include('./header.ejs') %>  
+<section class="container">
+
+    <h1 class="center-text">Training Services</h1>
+    <p class="intro"> 
+        Dog training services are a valuable resource for pet owners. At Pets-R-Us, we specialize in helping dogs become better behaved and more enjoyable companions. Our approach to dog training is based on positive reinforcement and trust building.
+        <br />
+        We believe that trust is the foundation of any successful relationship between a pet and their owner. We strive to create a trusting environment where owners and their pets can learn together. We also believe that positive reinforcement is the most effective way to train a dog. By using positive reinforcement methods, we help create a positive association between commands and rewards. This helps to ensure that dogs are more likely to obey commands and that owners can enjoy an obedient pet.
+        <br />
+        At Pets-R-Us, we provide personalized dog training services to meet the needs of any pet owner. We offer a variety of different services, from basic obedience training to behavior modification. We also provide specialized services, such as agility and obedience competition training. Our staff of experienced and certified trainers will work one-on-one with you and your pet to develop a training plan that is tailored to your pet's individual needs.
+        <br />
+        We are committed to helping both dogs and owners build strong relationships based on trust and mutual respect. Our goal is to create a positive and successful environment where owners can teach their pets how to behave in a way that is beneficial and enjoyable for both parties.
+        Reach out today to set up a consultation with our trainer. We look forward to helping you and your pet achieve success.
+        
+        </p>
+        <br />
+        <hr>
+        <br />
+    <div class="test">
+        <div class="trainer-pic">
+            <img class="passport" src="./images/dog-trainer.jpg" />
+        </div>
+
+        <div class="trainer-text">
+            <h3>Meet Lindsey</h3>
+            <p>Aenean pharetra ultrices luctus. Aliquam erat volutpat. Maecenas eros justo, egestas vitae velit quis, convallis porttitor metus. 
+            <br />
+            Mauris rutrum tortor tortor, sit amet placerat mauris imperdiet placerat. Praesent vel massa quam. Quisque sollicitudin, est id pulvinar condimentum, magna mi gravida tortor, id vestibulum neque nunc eget quam.
+            <br />
+            Nullam vehicula gravida pretium.</p>
+        </div>
+
+        <div class="tier1">
+            <h3>Tier 1</h3>
+            <br />
+            <p>Puppy life skills: $65</p>
+            <p>Puppy focus and self-control: $35</p>
+        </div>
+
+        <div class="tier2">
+            <h3>Tier 2</h3>
+            <br />
+            <p>Adolescence 101: $75</p>
+            <p>Adolescence Manners: $50</p>
+        </div>
+       
+        <div class="tier3">
+            <h3>Tier 3</h3>
+            <br />
+            <p>Adult Impulse Control: $35</p>
+            <p>Adult 101: $75</p>
+        </div>
+       
+    </div>
+</section>
+<%- include('./footer.ejs') %>
+</body>
+</html>

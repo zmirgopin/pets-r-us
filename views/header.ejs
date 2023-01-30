@@ -13,21 +13,19 @@
 </head>
 <body>
 
-    <%- include('./header.ejs') %>  
-<section class="container">
+<header class="header">
+    <h1 class="title">Pets-R-Us</h1>
 
-     <h3>Grooming Packages: </h3>
-     <div class="dog">
-                <p class="dog-text">Full package: $200-$250 </p>
-                <p class="dog-text">Hair Cut: $75-$125 </p>
-                <p class="dog-text">Deep Condition: $100</p>
-                <p class="dog-text">Nail Trim: $25 </p>
-     </div>
-</div>
 
+<section class="navbar">
+    <a href="/">Home</a>
+    <div class="dropdown">
+        <button class="dropbtn">Services</button>
+        <div class="dropdown-content">
+            <a href="/grooming">Grooming</a>
+            <a href="/training">Training</a>
+            <a href="/boarding">Boarding</a>
+        </div>
+      </div>
 </section>
-<%- include('./footer.ejs') %>
-</body>
-</html>
-
-        
+</header>

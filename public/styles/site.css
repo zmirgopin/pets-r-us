@@ -7,8 +7,8 @@ header {
     background-image: url("paw.jpg");
     color: #522F2F;
     padding: 0px;
-    text-align: center;
 }
+
 
 
 h1 {
@@ -33,6 +33,7 @@ h3 {
     text-align: center;
     margin: auto;
     background-color: #F2E4D8;
+ 
 }
 
 .address{
@@ -59,7 +60,6 @@ h3 {
 }
 
 .navbar {
-    overflow: hidden;
     background-color: #F2E4D8;
     color: #705842 ;
     border-bottom: 18px solid #705842;
@@ -75,6 +75,48 @@ h3 {
     padding: 14px 16px;
     text-decoration: none;
 }
+.dropbtn {
+    font-family: unset;
+    display: block;
+    background-color: #F2E4D8;
+    color: black;
+    padding: 15px;
+    font-size: 25px;
+    border: none;
+  }
+
+  .dropbtn:hover{
+    font-weight: bold;
+  }
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+.dropdown-content a {
+    float: center;
+    display: block;
+    color: black;
+    text-align: center;
+    font-size:25px;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+  
+  }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 
 .navbar a:hover {
     background-color: #705842;
@@ -85,19 +127,18 @@ h3 {
     padding: 10px;
     margin: 2% 5% 100px;
 }
-
-.locations{
-    float: left;
-    width: 50%;
-    height: 700px;
+.test{
+    display: flex;
+    padding: 10px;
+    text-align: center;
 }
 
-.hours{
-    float: right;
-    width: 30%;
-    height: 700px;
-    text-align: center;
-    padding-right: 20%;
+.test > .locations{
+    flex: 1;
+}
+
+.test > .hours{
+    flex: 1;
 }
 
 .dog{
@@ -113,7 +154,39 @@ h3 {
     text-align: center;
 }
 
+/*Training page styling*/
 
+.passport{
+    height: 500px;
+    width: 350px;
+}
+
+.trainer > .trainer-pic{
+    flex: 1;
+}
+
+.trainer-text{
+    padding: 30px;
+    height: 500px;
+    width: 350px;
+}
+
+.test > .tier1, .dog1{
+    flex: 1;
+    background-color: whitesmoke;
+}
+
+
+.test > .tier2, .dog2{
+    flex: 1;
+    background-color: #F2E4D8;
+}
+
+
+.test > .tier3, .dog3{
+    flex: 1;
+    background-color: #705842;
+}
 
 .card {
     

@@ -13,16 +13,7 @@
 </head>
 <body>
 
-<header class="header">
-    <h1 class="title">Pets-R-Us</h1>
-
-
-<section class="navbar">
-    <a href="/">Home</a>
-    <a href="/grooming">Grooming</a>
-    
-</section>
-</header>
+<%- include('./header.ejs') %>  
 <section class="container">
 
     <h1 class="center-text">Welcome to Pets-R-Us</h1>
@@ -35,19 +26,18 @@
         <br />
         <hr>
         <br />
-
+<container class="test">
     <div class="locations">
-            <h1 class="center-text">Locations</h1>
+        <h1 class="center-text">Locations</h1>
         <h3>Boise</h3>
         <p class="address">1200 Main Street; Boise, ID 65475</p>
         <h3>Denver</h3>
         <p class="address">766 Main Ave; Denver, CO 48913</p>
-        
-    </div>
+    </div> 
+   
 
     <div class="hours">
-        
-    <h1 class="center-text ">Store Hours</h1>
+        <h1 class="center-text ">Store Hours</h1>
                 <p class="day">Mon: 9am - 5pm</p>
                 <p class="day">Tues: 9am - 5pm</p>
                 <p class="day">Wed: 9am - 5pm</p>
@@ -55,7 +45,7 @@
                 <p class="day">Fri: 9am - 5pm</p>
                 <p class="day">Sat: 10am - 4pm</p>
     </div>
-
+</container>
     <hr>
     <h3>Dog of the Week:</h3>
     <div class= "dog">
@@ -92,12 +82,6 @@
 
 
 </section>
-
-<footer>
-    <p>
-        &copy; <script>document.write(new Date().getFullYear())</script> - <a href="https://www.bellevue.edu/">Bellevue University</a>
-    </p>
-
-</footer>
+<%- include('./footer.ejs') %>
 </body>
 </html>
