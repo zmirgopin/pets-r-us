@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- code attribution 
+Title: training.ejs
+Author: Zahava Gopin 
+Date: 2 February 2023
+Description: training page for pets-r-us app
+-->
 <head>
     <meta charset="UTF-8">
-    <title><%= title %></title>
+    <title><%= title %></title><!--Document Title -->
 
-    <link rel="stylesheet" href="/styles/site.css">
+    <link rel="stylesheet" href="/styles/site.css"><!--link to site styling-->
  
     <!-- Google fonts for Oswald -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet"><!--Link to google fonts-->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--link to cdn styling-->
 </head>
 <body>
 
-<%- include('./header.ejs') %>  
+<%- include('./header.ejs') %>  <!--Including the header document into the training page-->
 <section class="container">
-
+<!--Paragraph explaining the services. -->
     <h1 class="center-text">Training Services</h1>
     <p class="intro"> 
         Dog training services are a valuable resource for pet owners. At Pets-R-Us, we specialize in helping dogs become better behaved and more enjoyable companions. Our approach to dog training is based on positive reinforcement and trust building.
@@ -33,6 +39,7 @@
         <br />
     <div class="test">
         <div class="trainer-pic">
+            <!--Paragraph and image to "meet" the trainer.-->
             <img class="passport" src="./images/dog-trainer.jpg" />
         </div>
 
@@ -51,7 +58,7 @@
             <p>Puppy life skills: $65</p>
             <p>Puppy focus and self-control: $35</p>
         </div>
-
+<!--Pricing options. -->
         <div class="tier2">
             <h3>Tier 2</h3>
             <br />
@@ -68,6 +75,6 @@
        
     </div>
 </section>
-<%- include('./footer.ejs') %>
+<%- include('./footer.ejs') %><!--Including the footer in the page. -->
 </body>
 </html>

@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- code attribution 
+Title: index.ejs
+Author: Zahava Gopin 
+Date: 2 February 2023
+Description: index for pets-r-us app
+-->
 <head>
     <meta charset="UTF-8">
-    <title><%= title %></title>
+    <title><%= title %></title><!--link to site styling-->
 
-    <link rel="stylesheet" href="/styles/site.css">
+    <link rel="stylesheet" href="/styles/site.css"><!--link to site styling-->
  
     <!-- Google fonts for Oswald -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--link to cdn styling-->
 </head>
 <body>
 
-<%- include('./header.ejs') %>  
+<%- include('./header.ejs') %>  <!--Including the header document into the index--> 
 <section class="container">
-
+<!--Paragraph explaining the company.-->
     <h1 class="center-text">Welcome to Pets-R-Us</h1>
     <p class="intro"> Welcome to Pets-R-Us, the one-stop shop for all of your pet needs. Our store has been proudly serving our community and beyond since 2001. We specialize in a variety of pet services such as grooming, boarding, and training, so that you can give your pet the best care possible. Our expert staff are passionate about animals and have years of experience in the pet care industry.
 
@@ -26,6 +32,7 @@
         <br />
         <hr>
         <br />
+<!--Locations of the company. -->
 <container class="test">
     <div class="locations">
         <h1 class="center-text">Locations</h1>
@@ -35,7 +42,7 @@
         <p class="address">766 Main Ave; Denver, CO 48913</p>
     </div> 
    
-
+<!--Company hours.-->
     <div class="hours">
         <h1 class="center-text ">Store Hours</h1>
                 <p class="day">Mon: 9am - 5pm</p>
@@ -47,6 +54,7 @@
     </div>
 </container>
     <hr>
+<!--Dog of the week information.-->
     <h3>Dog of the Week:</h3>
     <div class= "dog">
         <p class="dog-text"><b>Name: </b> Jack </p>
@@ -57,7 +65,7 @@
     </div>
 
    
- 
+<!--Customer testimonials.-->
     <div class="testimonials">
         <h3>Testimonials</h3>
             <p>"My dog has never been happier!"</p>        
@@ -68,7 +76,7 @@
             <p><b>- John Locke</b></p>
     </div>
 
-
+<!--Form to contact the company.-->
         <h1 class="center-text">Contact Us</h1>
 
         <p class="testimonials">Your feedback is important to us.</p>
@@ -81,7 +89,7 @@
 
 
 
-</section>
+</section><!--Including the footer in the page. -->
 <%- include('./footer.ejs') %>
 </body>
 </html>
