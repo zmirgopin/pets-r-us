@@ -28,9 +28,9 @@ Description: boarding page for pets-r-us app
 
     <div class="center-div">
         <div class="form">
-        <form action="/customer" method="post">
-            <input type="text" name= "customerName" placeholder="User ID"> <br />
-            <input type="email" name="customerEmail" placeholder="Email"> <br />
+        <form action="/customers" method="post">
+            <input type="text" name= "customerName" id="customerName" placeholder="User ID" required autofocus> <br />
+            <input type="email" name="customerEmail" id="customerEmail" placeholder="Email" required autofocus> <br />
             <button id="button" class="btn btn-primary btn-primary:hover"> Send</button>
         </form>
         </div>
@@ -42,14 +42,3 @@ Description: boarding page for pets-r-us app
 <%- include('./footer.ejs') %>
 </body>
 </html>
-
-<script>
-
-document.getElementById("button").onclick =function (){
-    if (document.getElementsByTagName('input')=== '') {
-        alert(hi);
-    }
-}
-
-
-</script>

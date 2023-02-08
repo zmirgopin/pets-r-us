@@ -1,8 +1,11 @@
 "use strict";
 
 const express = require('express');
-const { default: mongoose } = require('mongoose');
 const path = require('path');
+const mongoose = require('mongoose');
+
+const Customer = require('./models/customer');
+
 
 const app = express(); 
 
@@ -55,27 +58,27 @@ app.get('/boarding', (req, res) =>{
 app.get('/registration', (req, res) =>{
     res.render('registration', {
         title: 'pets-r-us: Registration',
-        pageTitle: "Registrate"
+        pageTitle: "Registration"
     })
 });
 
 
 app.post('/customers',(req, res, next) =>{
     console.log(req.body);
-    console.log(req.body.customerID);
-    console.log(req.body.customerEmail)
-    const newCustomer = new Customer({
+    console.log(req.body.customerName);
+    console.log(req.body.customerEmail);
+    const newCustomer = new Customer ({
         customerId: req.body.customerName,
         email: req.body.customerEmail
-    })
+    });
     console.log (newCustomer);
 
     Customer.create(newCustomer, function(err, customer){
         if (err){
             console.log(err);
             next(err);
-        } else{
-            res.render('index', {
+        }else{
+            res.render('./index', {
                 title: 'pets-r-us: Home'
             })
         }
