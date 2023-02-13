@@ -34,6 +34,7 @@ app.get('/', (req, res) => {
     })
 });
 
+
 app.get('/grooming', (req, res) =>{
     res.render('grooming', {
         title: 'pets-r-us: Grooming',
@@ -83,7 +84,26 @@ app.post('/customers',(req, res, next) =>{
             })
         }
     })
-})
+});
+
+
+
+app.get('/customers', (req, res) =>{
+    Customer.find({}, function(err, customers){
+        if (err) {
+            console.log(err);
+            next (err);
+        } else {
+            res.render('customer-list', {
+                title: 'pets-r-us: Customers',
+                pageTitle: "Customers",
+                customers: customers
+        })
+        
+        }
+    })
+});
+
 
 app.listen(PORT, () => {
     console.log('Application started and listening on PORT' + PORT);
