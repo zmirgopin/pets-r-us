@@ -64,6 +64,7 @@ app.get('/registration', (req, res) =>{
 });
 
 
+
 app.post('/customers',(req, res, next) =>{
     console.log(req.body);
     console.log(req.body.customerName);
@@ -86,24 +87,20 @@ app.post('/customers',(req, res, next) =>{
     })
 });
 
-
-
-app.get('/customers', (req, res) =>{
-    Customer.find({}, function(err, customers){
+app.get('/customers', (req, res) => {
+    Customer.find({}, function(err, customers)  {
         if (err) {
             console.log(err);
-            next (err);
+            next(err);
         } else {
-            res.render('customer-list', {
-                title: 'pets-r-us: Customers',
-                pageTitle: "Customers",
+            res.render('list', {
+                title: 'pes-r-us: Customer List',
+                pageTitle: 'customers',
                 customers: customers
-        })
-        
+            })
         }
     })
-});
-
+})
 
 app.listen(PORT, () => {
     console.log('Application started and listening on PORT' + PORT);
