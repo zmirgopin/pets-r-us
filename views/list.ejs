@@ -22,11 +22,12 @@ Description: grooming page for pets-r-us app
 
     <%- include('./partials/header.ejs') %>    <!--Including the header document into the grooming page-->
 <section class="container">
+    <h1 class="center-text">Our Customers</h1>
     <% if(customers.length > 0) { %>
-    <table>
+    <table id="myTable" class="customerList">
         <tr>
-        <th>Customer ID</th>
-        <th>Email</th>
+        <th class="tableHeader">Customer ID</th>
+        <th class="tableHeader">Email</th>
         </tr>
         <tbody>
             <% customers.forEach(function(customer) { %>
@@ -34,9 +35,11 @@ Description: grooming page for pets-r-us app
                 <td>
                     <%= customer.customerId %>
                 </td>
-                <td>
+                <td class="email">
                     <%= customer.email %>
                 </td>
+                <td>
+                    <td><input type="button" value="Delete" onclick="deleteRow(this)">
             </tr>
             <% }) %>
             </tbody>
@@ -50,3 +53,11 @@ Description: grooming page for pets-r-us app
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>
+
+
+<script>
+function deleteRow(r) {
+  var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("myTable").deleteRow(i);
+}
+</script>
