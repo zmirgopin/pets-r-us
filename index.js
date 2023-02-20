@@ -1,5 +1,11 @@
+/** code attribution 
+Title: index.js
+Author: Zahava Gopin 
+Date: 2 February 2023
+Description: index.js for pets-r-us app
+*/
 "use strict";
-
+//Requiring all of the correct paths.
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -8,7 +14,7 @@ const Customer = require('./models/customer');
 
 
 const app = express(); 
-
+//setting views as ejs
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -16,9 +22,9 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-
+//opening on port 3000
 const PORT = process.env.PORT || 3000;
-
+//linking the right mongoDB database
 const conn = 'mongodb+srv://web340_user:admin@cluster0.lujih.mongodb.net/web340DB?retryWrites=true&w=majority';
 
 mongoose.connect(conn).then(() => {
@@ -26,7 +32,7 @@ mongoose.connect(conn).then(() => {
 }). catch (err =>{
     console.log('MongoDB Error' + err.message);
 })
-
+//Getting all of the pages that make up the app
 app.get('/', (req, res) => {
     res.render('index', {
         title: 'pets-r-us: Home',
@@ -62,9 +68,7 @@ app.get('/registration', (req, res) =>{
         pageTitle: "Registration"
     })
 });
-
-
-
+//getting the customer data structure from the models folder, require both fields to be filled out. 
 app.post('/customers',(req, res, next) =>{
     console.log(req.body);
     console.log(req.body.customerName);
@@ -86,7 +90,7 @@ app.post('/customers',(req, res, next) =>{
         }
     })
 });
-
+//Log the customers and display on a list on the "list" (customer) web page. 
 app.get('/customers', (req, res) => {
     Customer.find({}, function(err, customers)  {
         if (err) {

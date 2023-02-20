@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- code attribution 
-Title: grooming.ejs
+Title: list.ejs
 Author: Zahava Gopin 
-Date: 2 February 2023
-Description: grooming page for pets-r-us app
+Date: 17 February 2023
+Description: customer list page for pets-r-us app
 -->
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,7 @@ Description: grooming page for pets-r-us app
     <%- include('./partials/header.ejs') %>    <!--Including the header document into the grooming page-->
 <section class="container">
     <h1 class="center-text">Our Customers</h1>
+    <!--Dsiplay the list of customers in a table-->
     <% if(customers.length > 0) { %>
     <table id="myTable" class="customerList">
         <tr>
@@ -39,6 +40,7 @@ Description: grooming page for pets-r-us app
                     <%= customer.email %>
                 </td>
                 <td>
+                    <!--Delete button to delete a row of the table-->
                     <td><input type="button" value="Delete" onclick="deleteRow(this)">
             </tr>
             <% }) %>
@@ -56,6 +58,14 @@ Description: grooming page for pets-r-us app
 
 
 <script>
+/**code attribution 
+Title: list.ejs
+Author: Zahava Gopin 
+Date: 17 February 2023
+Description: javascript for customer list page for pets-r-us app
+*/
+"use strict";
+//Making the delete button work
 function deleteRow(r) {
   var i = r.parentNode.parentNode.rowIndex;
   document.getElementById("myTable").deleteRow(i);
