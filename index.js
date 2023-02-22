@@ -9,9 +9,10 @@ Description: index.js for pets-r-us app
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
+const fs = require('fs');
 
 const Customer = require('./models/customer');
-
+const Appointment = require('./models/appointments');
 
 const app = express(); 
 //setting views as ejs
@@ -25,7 +26,7 @@ app.use(express.json());
 //opening on port 3000
 const PORT = process.env.PORT || 3000;
 //linking the right mongoDB database
-const conn = 'mongodb+srv://web340_user:admin@cluster0.lujih.mongodb.net/web340DB?retryWrites=true&w=majority';
+const conn = 'mongodb+srv://web340_admin:Zee03rox@bellevueuniversity.r06aetm.mongodb.net/web340DB'
 
 mongoose.connect(conn).then(() => {
     console.log('Connection to the database was successful');
@@ -105,6 +106,42 @@ app.get('/customers', (req, res) => {
         }
     })
 })
+//synching the services.json file (has all the possible services) to the appointments page
+app.get('/appointments', (req, res) => {
+    let jsonFile = fs.readFileSync('./public/data/services.json');
+    let services = JSON.parse(jsonFile);
+
+    console.log(services);
+
+    res.render('appointments', {
+        title: 'pets-r-us: Booking',
+        pageTitle: 'Booking',
+        services: services
+    })
+});
+//Getting the appointments model from the correct folder, require all fields, create new appointment. 
+app.post('/appointments', (req, res, next) => {
+    const newAppointment = new Appointment ({
+        userName: req.body.userName, 
+        firstName: req.body.firstName, 
+        lastName: req.body.lastName, 
+        email: req.body.email,
+        service: req.body.service
+    })
+
+    Appointment.create(newAppointment, function(err, appointments){
+        if (err){
+            console.log(err);
+            next(err);
+        } else{
+            res.render('index', {
+                title: "pets-r-us: Home"
+            })
+        }
+    })
+})
+
+
 
 app.listen(PORT, () => {
     console.log('Application started and listening on PORT' + PORT);
