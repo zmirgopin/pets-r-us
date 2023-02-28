@@ -141,7 +141,23 @@ app.post('/appointments', (req, res, next) => {
     })
 })
 
+app.get('/my-appointments', (req, res)=> {
+    res.render('my-appointments', {
+        title: 'pets-r-us: My Appointments',
+        pageTitle: 'My Appointments'
+    })
+})
 
+app.get('/api/appointments/:email', async(req, res, next)=>{
+    Appointment.find({'email': req.params.email}, function(err, appointments){
+        if (err) {
+            console.log(err);
+            next(err);
+        } else {
+            res.json(appointments);
+        }
+    })
+})
 
 app.listen(PORT, () => {
     console.log('Application started and listening on PORT' + PORT);
